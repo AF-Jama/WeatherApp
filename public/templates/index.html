@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../styles/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
 </head>
 <body>
     <header id="header">
@@ -49,8 +50,42 @@
     <section id="section-2">
         <div class="outer-card-container">
             <div class="card">
-                <div class="city-name">
-                    <h1>City Name</h1>
+                <div class="city-name-and-icon">
+                    <div class="city-name">
+                        <h1>City Name</h1>
+                    </div>
+                    <div class="weather-icon">
+                        <i class="fa fa-sun" aria-hidden="true"></i>
+                    </div>
+                </div>
+
+                <div class="data-div">
+                    <div class="temp-display">
+                        <div class="actual-temp">
+                            <h2>Temperature(°C)</h2>
+                            <div class="temp-number" id="actual-temp-number"></div>
+                        </div>
+                        <div class="feels-like-temp">
+                            <h4>Feels Like(°C)</h2>
+                            <div class="temp-number" id="feels-like-number"></div>
+                        </div>
+                    </div>
+
+                    <div class="extra-info-div">
+                        <div class = "extra" id="wind-info">
+                            <p>Wind Speeds <strong>(m/s)</strong></p>
+                            <div class="wind-info-value"></div>
+                        </div>
+                        <div class="extra" id="humidity-info">
+                            <p>Humidity <strong>(%)</strong></p>
+                            <div class="humdity-info-value"></div>
+                        </div>
+                        <div class = "extra" id="coord-info">
+                            <p>Lat,lon</p>
+                            <div class="coord-info-value"></div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>

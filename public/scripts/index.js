@@ -45,6 +45,14 @@ searchButton.addEventListener('click',async e=>{
 
     const searchInput = document.getElementById('city-name-input')
     var errorDiv = document.getElementById('error')
+
+    const cityName = document.querySelector('.city-name h1')
+    const actualTemp = document.getElementById('actual-temp-number')
+    const feelsLikeTemp = document.getElementById('feels-like-number')
+    const windSpeedValue = document.querySelector('.wind-info-value')
+    const humidityValue = document.querySelector('.humdity-info-value')
+    const coordValue = document.querySelector('.coord-info-value')
+
     if(!searchInput.value.trim()){
         console.log("EMPTY")
         errorDiv.innerHTML = "You have entered an empty string, please try again"
@@ -57,7 +65,31 @@ searchButton.addEventListener('click',async e=>{
         errorDiv.innerHTML = "Weather data cannot be found for this location"
         return;
     }
-    console.log(response);
+    // dereference return promise response object
+
+    let {name,main:{temp,feels_like,humidity},coord:{lon,lat},sys:{country},wind:{speed}} = response;
+    console.log(name)
+    console.log(speed)
+    console.log(lon,lat)
+    console.log(temp,feels_like)
+    console.log(country)
+
+    temp = temp.toFixed(1)
+    temp = temp.toString()
+
+    feels_like = feels_like.toFixed(1)
+    feels_like = feels_like.toString()
+
+    cityName.innerHTML = `${name}, ${country}`
+    actualTemp.innerHTML = `${temp}`
+    feelsLikeTemp.innerHTML = `${feels_like}`
+
+    windSpeedValue.innerHTML = `${speed}`
+    humidityValue.innerHTML = `${humidity}`
+    coordValue.innerHTML = `(${lat.toFixed(2)},${lon.toFixed(2)})`
+
+
+
     return;
 })
 

@@ -113,12 +113,67 @@ form{
 }
 
 .card{
-    height: 500px;
-    width: 500px;
+    height: 90%;
+    width: 70%;
+    min-width: 500px;
     border: 2px solid slateblue;
     border-radius: 10px;
 }
 
+.data-div{
+    height: 100%;
+    width: 100%;
+    border: 2px solid black;
+    margin-top: 1.2rem;
+}
+
+.city-name-and-icon{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.weather-icon{
+    margin-right: 1.2rem;
+    color: orange;
+}
+
+.actual-temp, .feels-like-temp{
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+.temp-number{
+    font-size: 1.4rem;
+}
+
+.extra-info-div{
+    display: flex;
+    width: 100%;
+    height: 75%;
+    border: 2px solid greenyellow;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.extra{
+    width: 190px;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-right: 2rem;
+    margin-left: 1rem;
+    border: 2px solid black;
+    padding: 0.2rem 1rem;
+}
+
+.extra p{
+    text-align: center;
+}
 
 @media only screen and (min-width: 769px) {
     /*desktop*/
@@ -195,7 +250,7 @@ form{
 
     #exit{
         position: absolute;
-        right: -10px;
+        right: 10px;
         top: 0;
         z-index: 1000;
     }
