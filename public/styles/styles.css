@@ -24,7 +24,7 @@ header{
     height: 10vh;
     width: 100vw;
     min-width: 500px;
-    background-color: red;
+    /* background-color: red; */
 }
 
 
@@ -118,6 +118,7 @@ form{
     min-width: 500px;
     border: 2px solid slateblue;
     border-radius: 10px;
+    opacity: 0.8;
 }
 
 .data-div{
@@ -189,10 +190,8 @@ form{
         display: none;
     }
 
-    #links-outer-container{
-        display: ;
-    }
 }
+
 .form-group{
     margin-right: 0.8rem;
 }
@@ -232,6 +231,7 @@ form{
         height: 100vh;
         width: 100%;
         background-color: black;
+        z-index: 50;
         border: 2px solid black;
     }
 
@@ -253,6 +253,16 @@ form{
         right: 10px;
         top: 0;
         z-index: 1000;
+    }
+
+    .extra-info-div{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .extra{
+        width: 100%;
+        height: 80px;
     }
 }
 
