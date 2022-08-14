@@ -1,0 +1,12 @@
+// node modules directory
+
+node_modules
+
+
+// env file
+
+.env
+
+// config file
+
+config.js

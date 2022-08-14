@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather app</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+    <header id="header">
+        <nav id=outer-navigation-container>
+            <div id="burgerButton">
+                <i class="fa fa-bars" style="font-size:30px;"></i>
+            </div>
+            <div id="links-outer-container">
+                <ul id="links-inner-container">
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Contact</li>
+                    <li>More</li>
+                </ul>
+            </div>
+            <div class="logo">
+                <h1>Weather app</h1>
+            </div>
+            <div id="exit">
+                <i class="fa fa-window-close" aria-hidden="true"></i>
+            </div>
+        </nav>
+    </header>
+
+    <section id="section-1">
+        <div id="outer-form-container">
+            <form action="" class="form">
+                <div class="form-group">
+                    <input type="text" placeholder="City Name" id="city-name-input" class="form-control-plaintext" style="color: black;">
+                </div>
+                <div class="form-group">
+                    <i class="fa fa-search" aria-hidden="true" id="search-btn"></i>
+                </div>                
+            </form>
+            <div id="error"></div>
+        </div>
+    </section>
+
+    <section id="section-2">
+        <div class="outer-card-container">
+            <div class="card">
+                <div class="city-name">
+                    <h1>City Name</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer id="footer-id"></footer>
+
+    <script src="../scripts/bundle.js"></script>
+</body>
+</html>
