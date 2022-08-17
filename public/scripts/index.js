@@ -53,14 +53,15 @@ searchButton.addEventListener('click',async e=>{
     const humidityValue = document.querySelector('.humdity-info-value')
     const coordValue = document.querySelector('.coord-info-value')
 
-    if(!searchInput.value.trim()){
+    const searchInputValue = searchInput.value.trim()
+
+    if(!searchInputValue){
         console.log("EMPTY")
         errorDiv.innerHTML = "You have entered an empty string, please try again"
         return;
     }
     errorDiv.innerHTML = ''
-    const searchValue = searchInput.value.trim()
-    const response = await getCountryData(searchValue)
+    const response = await getCountryData(searchInputValue)
     if(!response){
         errorDiv.innerHTML = "Weather data cannot be found for this location"
         return;
@@ -95,14 +96,15 @@ searchButton.addEventListener('click',async e=>{
 
 
 async function getCountryData(countryName){
+    // method triggers get request to endpoint and returns promise json value
     try{
         console.log(1)
         let response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${countryName}&appid=${APIKEY}&units=metric`)
         if(!response.ok) throw new Error("Error")
         response = await response.json()
         console.log(3)
-        return response;
+        return response; // returns promise value
     }catch{
-        return null;
+        return null; // returns promise value of null, 
     }
 }
