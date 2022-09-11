@@ -204,7 +204,6 @@ form{
   
   :-ms-input-placeholder { /* Internet Explorer 10-11 */
     color: black;
-    font-size: 1.2rem;
   }
   
   ::-ms-input-placeholder { /* Microsoft Edge */
