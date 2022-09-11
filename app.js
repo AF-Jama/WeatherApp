@@ -1,12 +1,17 @@
 const express = require('express')
+const path = require('path')
 require('dotenv').config()
 
 const app = express()
 
+// app.get('/',(req,res)=>{
+//     return res.send({
+//         msg:"Hello"
+//     })
+// })
+
 app.get('/',(req,res)=>{
-    return res.send({
-        msg:"Hello"
-    })
+    return res.sendFile(__dirname +'/public/templates/index.html')
 })
 
 
@@ -22,7 +27,7 @@ app.get('/',(req,res)=>{
 
 
 
-
+app.use(express.static(path.join(__dirname,'public')))
 
 
 

@@ -9,40 +9,40 @@ module.exports = {
 const {APIKEY} = require('../../config.js')
 
 console.log("SUCCESFULL")
-const burgerButton = document.getElementById('burgerButton')
+const burgerButton = document.getElementById('burger-btn')
 
 burgerButton.addEventListener('click',e=>{
     e.preventDefault()
 
     console.log("CLICKED")
 
-    const outerContainer = document.getElementById('links-outer-container')
-    if(outerContainer.style.visibility === 'hidden'){
-        outerContainer.style.visibility = 'visible'
-        exitButton.style.visibility = 'visible';
-        burgerButton.style.zIndex = '-10'
-        outerContainer.style.zIndex = '100'
+    const outerContainer = document.getElementById('links-and-contact-container')
+
+    if(outerContainer.style.display!== 'none'){
+        outerContainer.style.display = 'none';
         return;
     }
+    outerContainer.style.display = 'flex';
+    return;
 })
 
-const exitButton = document.getElementById('exit')
+// const exitButton = document.getElementById('exit')
 
-exitButton.addEventListener('click',e=>{
-    e.preventDefault()
+// exitButton.addEventListener('click',e=>{
+//     e.preventDefault()
 
-    const outerContainer = document.getElementById('links-outer-container')
+//     const outerContainer = document.getElementById('links-outer-container')
 
-    outerContainer.style.visibility = 'hidden';
-    burgerButton.style.zIndex = 'auto'
-    exitButton.style.visibility = 'hidden';
-})
+//     outerContainer.style.visibility = 'hidden';
+//     burgerButton.style.zIndex = 'auto'
+//     exitButton.style.visibility = 'hidden';
+// })
 
 const body = document.querySelector('body')
 
 console.log(body.style)
 
-const searchButton = document.querySelector('#section-1 i')
+const searchButton = document.getElementById('search-btn')
 
 console.log(searchButton)
 
@@ -52,21 +52,22 @@ searchButton.addEventListener('click',async e=>{
     const searchInput = document.getElementById('city-name-input')
     var errorDiv = document.getElementById('error')
 
-    const cityName = document.querySelector('.city-name h1')
+    const cityName = document.querySelector('.city-name h2')
     const actualTemp = document.getElementById('actual-temp-number')
     const feelsLikeTemp = document.getElementById('feels-like-number')
-    const windSpeedValue = document.querySelector('.wind-info-value')
-    const humidityValue = document.querySelector('.humdity-info-value')
-    const coordValue = document.querySelector('.coord-info-value')
+    const windSpeedValue = document.getElementById('wind-info-value')
+    const humidityValue = document.getElementById('humdity-info-value')
+    const coordValue = document.getElementById('coord-info-value')
 
-    if(!searchInput.value.trim()){
+    const searchInputValue = searchInput.value.trim()
+
+    if(!searchInputValue){
         console.log("EMPTY")
         errorDiv.innerHTML = "You have entered an empty string, please try again"
         return;
     }
     errorDiv.innerHTML = ''
-    const searchValue = searchInput.value.trim()
-    const response = await getCountryData(searchValue)
+    const response = await getCountryData(searchInputValue)
     if(!response){
         errorDiv.innerHTML = "Weather data cannot be found for this location"
         return;
@@ -88,7 +89,9 @@ searchButton.addEventListener('click',async e=>{
 
     cityName.innerHTML = `${name}, ${country}`
     actualTemp.innerHTML = `${temp}`
+    actualTemp.style.fontSize = "30px";
     feelsLikeTemp.innerHTML = `${feels_like}`
+    feelsLikeTemp.style.fontSize = "30px"
 
     windSpeedValue.innerHTML = `${speed}`
     humidityValue.innerHTML = `${humidity}`
@@ -101,15 +104,16 @@ searchButton.addEventListener('click',async e=>{
 
 
 async function getCountryData(countryName){
+    // method triggers get request to endpoint and returns promise json value
     try{
         console.log(1)
         let response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${countryName}&appid=${APIKEY}&units=metric`)
         if(!response.ok) throw new Error("Error")
         response = await response.json()
         console.log(3)
-        return response;
+        return response; // returns promise value
     }catch{
-        return null;
+        return null; // returns promise value of null, 
     }
 }
 },{"../../config.js":1}]},{},[2]);
