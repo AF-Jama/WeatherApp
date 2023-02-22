@@ -23,7 +23,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # enviroment file
-.enviroment
+.env
 
 # Dockerfile
 Dockerfile
