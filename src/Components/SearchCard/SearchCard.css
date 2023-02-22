@@ -1,0 +1,86 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --maxCardWidth:600px;
+}
+
+#search-card-container{
+    width: 95%;
+    max-width: var(--maxCardWidth);
+    margin: 0 auto;
+    /* border: 2px solid red; */
+    background-color: #fff;
+    max-height: 50px;
+    overflow: hidden;
+    transition: max-height 2s ease-in-out;
+    border-radius: 10px;
+    padding: 0 0 1rem 1rem;
+}
+
+#search-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input-group{
+    flex: 1;
+}
+
+#country-search{
+    width: 100%;
+    padding: 1rem;
+    border:  none;
+    border-color: #fff;
+    border-radius: 5px;
+    font-size: 1.3rem;
+}
+
+input {border:0;outline:0;}
+input:focus {outline:none!important;}
+
+#data-container>h1{
+    font-size: 2rem;
+}
+
+#data-container>p{
+    margin: 1rem 0;
+    font-size: 2rem;
+}
+
+img{
+    max-width: 100%;
+}
+
+#weather-data{
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;   
+}
+
+#humidity-container{
+    display: flex;
+}
+
+#humidity-data{
+    margin-left: 0.5rem;
+}
+
+#wind-container{
+    display: flex;
+}
+
+#wind-data{
+    margin-left: 0.5rem;
+}
+
+.data{
+    font-size: 1.4rem;
+}
