@@ -14,12 +14,12 @@ const Header = ()=>{
             <div id="inner-header-container">
                 <img id="header-logo" src={openWeatherLogo} alt="" />
 
-                <nav>
+                {/* <nav>
                     <div id="nav-links">
                         <a href="https://openweathermap.org/api" target='_blank' className="nav-link" id="home-link">Open Weather API</a>
                         <a href="https://github.com/AF-Jama" target='_blank' className="nav-link" id="api-link">Github</a>
                     </div>
-                </nav>
+                </nav> */}
             </div>
         </header>
     )
